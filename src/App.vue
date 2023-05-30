@@ -1,25 +1,33 @@
 <template lang="">
     <div>
-        <h1> Vue JS </h1>
-        <CarOptions />
-        <hr />
-        <CarComposition />
-        <hr />
-      <!--<Car /> -->
+        <h1> Vue JS Props </h1>
+     
+        <CarProps :brand="brand"/>
+       <p>Aca se pasaron variables mediante los props</p>
     </div>
-   <p>"Lore" </p>
+  
 </template>
 <script>
-// import Car from "./components/Car"
-import CarComposition from "./components/CarComposition"
-import CarOptions from "./components/CarOptions"
+import CarProps from "./components/CarProps"
+
 export default {
     components: {
-        CarComposition,
-        CarOptions,
-        // Car,
-    }
-}
+         CarProps,
+    },
+   
+   setup(){
+    
+    let brand = "Audi";
+    let model = "A4";
+    let power = 30;
+    return{
+        brand,
+        model,
+        power,
+    };
+   },
+
+};
 </script>
 <style lang="">
     
