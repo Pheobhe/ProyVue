@@ -36,7 +36,7 @@
 //     }
 //    return{
 //     testPower,
-//    }
+//    }    si es solo 1 funcion anulo todo esto y se la paso en el button
     }
   }
  
