@@ -4,7 +4,8 @@
       <p>Marca:    {{ brand }}</p>
       <p>Modelo:   {{ model }}</p>
       <p>Potencia: {{ power }} </p>
-    
+   <!-- <button @click="testPower">Aumentar</button> -->
+    <button @click="upPower">Aumentar</button>
   </template>
   
   <script>
@@ -23,21 +24,26 @@
             type:Number,
             default: 60,
         },
+
+        upPower: Function,
     },
 
   setup(props) {
-    //const brand ="Audi";
-    //const model = "A4";
-  //console.log(props);
-//   return{
-//       brand,
-//       model,
     
-//     };
-  },
-  };
-  </script>
-  
+//     console.log(props);
+//     const testPower =() =>{
+//         props.upPower();
+//     }
+//    return{
+//     testPower,
+//    }
+    }
+  }
+ 
+
+  </script> 
+     
     <style lang="">
       
     </style>
+ 
