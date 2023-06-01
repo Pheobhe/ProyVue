@@ -1,11 +1,14 @@
+cars props
 <template lang="">
    
     <h2>Coche  - Composition API</h2>
       <p>Marca:    {{ brand }}</p>
       <p>Modelo:   {{ model }}</p>
       <p>Potencia: {{ power }} </p>
-   <!-- <button @click="testPower">Aumentar</button> -->
+  
     <button @click="upPower">Aumentar</button>
+   <!-- <button @click="downPower">Disminuir</button> -->
+    <button @click="downPowerFn">Disminuir</button>
   </template>
   
   <script>
@@ -26,24 +29,31 @@
         },
 
         upPower: Function,
+        downPower: Function,
     },
 
-  setup(props) {
-    
+  emits: ["downPower"] ,
+
+  setup(props, context) {
+    console.log(context);
+
+    const downPowerFn =() => {
+      context.emit("downPower");
+      console.log("hola");
+
+    }
 //     console.log(props);
 //     const testPower =() =>{
 //         props.upPower();
 //     }
-//    return{
-//     testPower,
-//    }    si es solo 1 funcion anulo todo esto y se la paso en el button
+    return{
+    downPowerFn,
+   }   
+
     }
   }
  
 
   </script> 
      
-    <style lang="">
-      
-    </style>
- 
+   
